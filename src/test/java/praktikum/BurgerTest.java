@@ -23,7 +23,7 @@ public class BurgerTest {
     protected Ingredient sausage;
 
     @Mock
-    protected Ingredient chili_sauce;
+    protected Ingredient chili;
 
     @Before
     public void setUp() {
@@ -40,9 +40,9 @@ public class BurgerTest {
         when(sausage.getType()).thenReturn(IngredientType.FILLING);
         when(sausage.getPrice()).thenReturn(300f);
 
-        when(chili_sauce.getName()).thenReturn("Соус чили");
-        when(chili_sauce.getType()).thenReturn(IngredientType.SAUCE);
-        when(chili_sauce.getPrice()).thenReturn(100f);
+        when(chili.getName()).thenReturn("Соус чили");
+        when(chili.getType()).thenReturn(IngredientType.SAUCE);
+        when(chili.getPrice()).thenReturn(100f);
         burger = new Burger();
     }
 
@@ -129,7 +129,7 @@ public class BurgerTest {
     public void testMoveIngredientMovedElement() {
         burger.addIngredient(dinosaur);
         burger.addIngredient(sausage);
-        burger.addIngredient(chili_sauce);
+        burger.addIngredient(chili);
         burger.moveIngredient(0, 1);
         assertEquals("Ингредиент dinosaur должен быть перемещен на позицию 1", dinosaur, burger.ingredients.get(1));
     }
@@ -138,7 +138,7 @@ public class BurgerTest {
     public void testMoveIngredientShiftedElement() {
         burger.addIngredient(dinosaur);
         burger.addIngredient(sausage);
-        burger.addIngredient(chili_sauce);
+        burger.addIngredient(chili);
         burger.moveIngredient(0, 1);
         assertEquals("Ингредиент sausage должен переместиться на позицию 0", sausage, burger.ingredients.get(0));
     }
@@ -147,9 +147,9 @@ public class BurgerTest {
     public void testMoveIngredientUnchangedElement() {
         burger.addIngredient(dinosaur);
         burger.addIngredient(sausage);
-        burger.addIngredient(chili_sauce);
+        burger.addIngredient(chili);
         burger.moveIngredient(0, 1);
-        assertEquals("Ингредиент chili_sauce должен остаться на позиции 2", chili_sauce, burger.ingredients.get(2));
+        assertEquals("Ингредиент chili_sauce должен остаться на позиции 2", chili, burger.ingredients.get(2));
     }
 
     @Test

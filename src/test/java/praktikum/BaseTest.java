@@ -21,7 +21,7 @@ public class  BaseTest {
     protected Ingredient sausage;
 
     @Mock
-    protected Ingredient chili_sauce;
+    protected Ingredient chili;
 
     @Before
 
@@ -39,9 +39,9 @@ public class  BaseTest {
         when(sausage.getType()).thenReturn(IngredientType.FILLING);
         when(sausage.getPrice()).thenReturn(300f);
 
-        when(chili_sauce.getName()).thenReturn("Соус чили");
-        when(chili_sauce.getType()).thenReturn(IngredientType.SAUCE);
-        when(chili_sauce.getPrice()).thenReturn(100f);
+        when(chili.getName()).thenReturn("Соус чили");
+        when(chili.getType()).thenReturn(IngredientType.SAUCE);
+        when(chili.getPrice()).thenReturn(100f);
 
         burger = new Burger();
     }
